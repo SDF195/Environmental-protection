@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>绿境环保 | 守护绿色家园</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <script>
+    tailwind.config = {
+      theme:{
+        extend:{
+          colors:{
+            primary:'#22C55E',
+            secondary:'#10B981',
+            accent:'#3B82F6',
+            warm:'#F59E0B',
+            dark:'#0F172A',
+            light:'#F0FDF4'
+          },
+          fontFamily:{
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .glass{background:rgba(255,255,255,0.7);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.3)}
+      .text-gradient{background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+      .scroll-hide::-webkit-scrollbar{display:none}
+      .scroll-hide{-ms-overflow-style:none;scrollbar-width:none}
+      .card-hover{transition:all 0.3s ease}
+      .card-hover:hover{transform:translateY(-8px);box-shadow:0 20px 25px -5px rgba(34, 197, 94, 0.1)}
+      .link-icon{opacity:0;transform:translateX(-5px);transition:all 0.2s ease}
+      .card-hover:hover .link-icon{opacity:1;transform:translateX(0)}
+    }
+  </style>
+</head>
+<body class="bg-light font-sans text-gray-800 overflow-x-hidden">
+<!-- 导航栏 -->
+<header id="navbar" class="fixed top-0 w-full z-50 py-4 transition-all duration-500">
+  <div class="container mx-auto px-6">
+    <nav class="flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+          <i class="fa fa-leaf text-white text-xl"></i>
+        </div>
+        <span class="font-bold text-xl text-dark">绿境</span>
+      </a>
+      <div class="hidden md:flex gap-8 items-center">
+        <a href="#home" class="text-dark hover:text-primary transition-colors duration-300">首页</a>
+        <a href="#about" class="text-dark hover:text-primary transition-colors duration-300">关于我们</a>
+        <a href="#projects" class="text-dark hover:text-primary transition-colors duration-300">环保项目</a>
+        <a href="#news" class="text-dark hover:text-primary transition-colors duration-300">环保资讯</a>
+        <a href="#contact" class="rounded-full px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
+          加入我们
+        </a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-2xl text-dark focus:outline-none">
+        <i class="fa fa-bars"></i>
+      </button>
+    </nav>
+  </div>
+  <!-- 移动端菜单 -->
+  <div id="mobileMenu" class="md:hidden absolute w-full left-0 top-full mt-2 glass rounded-b-2xl opacity-0 -translate-y-full transition-all duration-500 pointer-events-none">
+    <div class="px-6 py-6 flex flex-col gap-4">
+      <a href="#home" class="py-2 border-b border-gray-200 hover:text-primary transition-colors">首页</a>
+      <a href="#about" class="py-2 border-b border-gray-200 hover:text-primary transition-colors">关于我们</a>
+      <a href="#projects" class="py-2 border-b border-gray-200 hover:text-primary transition-colors">环保项目</a>
+      <a href="#news" class="py-2 border-b border-gray-200 hover:text-primary transition-colors">环保资讯</a>
+      <a href="#contact" class="rounded-full text-center py-3 bg-gradient-to-r from-primary to-secondary text-white mt-2">
+        加入我们
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- 首页横幅 -->
+<section id="home" class="min-h-screen pt-24 relative flex items-center">
+  <div class="absolute overflow-hidden inset-0 z-0">
+    <div class="absolute w-64 h-64 rounded-full bg-primary/10 blur-3xl top-20 left-10 animate-pulse"></div>
+    <div class="absolute w-80 h-80 rounded-full bg-accent/10 blur-3xl bottom-20 right-10 animate-pulse delay-1000"></div>
+  </div>
+  <div class="container mx-auto px-6 z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <div class="lg:w-1/2">
+        <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium inline-block mb-6">
+          🌱 守护地球 从点滴开始
+        </span>
+        <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6">
+          让绿色成为<br>
+          <span class="bg-gradient-to-r from-primary to-secondary text-gradient">地球最美的颜色</span>
+        </h1>
+        <p class="text-lg text-gray-600 max-w-xl mb-8">
+          绿境专注环境保护与可持续发展，用实际行动修复自然生态，共建人与自然和谐共生的绿色家园。
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#projects" class="rounded-full text-center px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 font-medium">
+            探索绿色项目
+          </a>
+          <a href="#contact" class="rounded-full text-center px-8 py-4 glass hover:bg-white/90 transition-all duration-300 font-medium">
+            联系我们
+          </a>
+        </div>
+      </div>
+      <div class="lg:w-1/2">
+        <img src="https://picsum.photos/id/10/800/600" alt="绿色自然" class="rounded-3xl shadow-2xl w-full h-auto">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 关于我们 -->
+<section id="about" class="py-24 bg-white">
+  <div class="container mx-auto px-6 text-center">
+    <span class="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium">关于我们</span>
+    <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-4 mb-6">
+      我们的<span class="bg-gradient-to-r from-primary to-secondary text-gradient">使命与愿景</span>
+    </h2>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
+         </p>
+    <div class="grid md:grid-cols-3 grid-cols-1 gap-8">
+      <div class="bg-light p-8 rounded-2xl shadow-lg card-hover">
+        <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 mx-auto">
+          <i class="fa fa-tree text-primary text-2xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-3">保护自然生态</h3>
+        <p class="text-gray-600">修复森林湿地，维系生物多样性，守护地球生态平衡。</p>
+      </div>
+      <div class="bg-light p-8 rounded-2xl shadow-lg card-hover">
+        <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 mx-auto">
+          <i class="fa fa-lightbulb-o text-accent text-2xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-3">推动绿色创新</h3>
+        <p class="text-gray-600">推广清洁能源与循环经济，助力社会低碳转型。</p>
+      </div>
+      <div class="bg-light p-8 rounded-2xl shadow-lg card-hover">
+        <div class="w-16 h-16 rounded-2xl bg-warm/10 flex items-center justify-center mb-6 mx-auto">
+          <i class="fa fa-users text-warm text-2xl"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-3">赋能公众参与</h3>
+        <p class="text-gray-600">环保科普落地，让每个人都能成为绿色行动者。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 环保项目（按钮优化：单按钮弹窗+右上角悬浮跳转） -->
+<section id="projects" class="py-24 bg-gradient-to-b from-white to-light">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">环保项目</span>
+      <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-4 mb-6">
+        正在落地的<span class="bg-gradient-to-r from-primary to-secondary text-gradient">绿色行动</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        全国多地区同步推进，点滴行动汇聚成改变环境的力量。
+      </p>
+    </div>
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+      <!-- 项目1 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover relative group">
+        <!-- 右上角悬浮跳转按钮（hover显示） -->
+        <a href="环保项目-森林恢复计划.html" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:bg-primary hover:text-white">
+          <i class="fa fa-external-link"></i>
+        </a>
+        <div class="h-60 overflow-hidden">
+          <img src="https://picsum.photos/id/28/600/400" alt="森林恢复计划" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+        <div class="p-6">
+          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">植树造林</span>
+          <h3 class="text-xl font-bold my-3">森林恢复计划</h3>
+          <p class="text-gray-600 mb-4">荒山原生树种种植，修复退化山林生态，重建生物栖息地。</p>
+          <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+            <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full w-[78%]"></div>
+          </div>
+          <div class="flex justify-between text-sm text-gray-500 mb-6">
+            <span>进度 78%</span>
+            <span>目标 200万元</span>
+          </div>
+          <button data-type="project" data-id="1" class="openModal w-full py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+            了解详情 <i class="fa fa-arrow-right link-icon"></i>
+          </button>
+        </div>
+      </div>
+      <!-- 项目2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover relative group">
+        <a href="环保项目-河流清洁行动.html" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:bg-primary hover:text-white">
+          <i class="fa fa-external-link"></i>
+        </a>
+        <div class="h-60 overflow-hidden">
+          <img src="https://picsum.photos/id/1002/600/400" alt="河流清洁行动" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+        <div class="p-6">
+          <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">水资源保护</span>
+          <h3 class="text-xl font-bold my-3">河流清洁行动</h3>
+          <p class="text-gray-600 mb-4">志愿者河道清淤、垃圾打捞与水质监测，守护母亲河。</p>
+          <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+            <div class="bg-gradient-to-r from-accent to-blue-400 h-2 rounded-full w-[65%]"></div>
+          </div>
+          <div class="flex justify-between text-sm text-gray-500 mb-6">
+            <span>进度 65%</span>
+            <span>目标 150万元</span>
+          </div>
+          <button data-type="project" data-id="2" class="openModal w-full py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+            了解详情 <i class="fa fa-arrow-right link-icon"></i>
+          </button>
+        </div>
+      </div>
+      <!-- 项目3 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover relative group">
+        <a href="环保项目-绿色校园计划.html" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:bg-primary hover:text-white">
+          <i class="fa fa-external-link"></i>
+        </a>
+        <div class="h-60 overflow-hidden">
+          <img src="https://picsum.photos/id/239/600/400" alt="绿色校园计划" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+        <div class="p-6">
+          <span class="bg-warm/10 text-warm px-3 py-1 rounded-full text-sm">环保教育</span>
+          <h3 class="text-xl font-bold my-3">绿色校园计划</h3>
+          <p class="text-gray-600 mb-4">中小学环保课程落地，打造绿色校园，培养下一代环保意识。</p>
+          <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+            <div class="bg-gradient-to-r from-warm to-yellow-400 h-2 rounded-full w-[52%]"></div>
+          </div>
+          <div class="flex justify-between text-sm text-gray-500 mb-6">
+            <span>进度 52%</span>
+            <span>目标 100万元</span>
+          </div>
+          <button data-type="project" data-id="3" class="openModal w-full py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+            了解详情 <i class="fa fa-arrow-right link-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 环保资讯（同项目按钮优化逻辑） -->
+<section id="news" class="py-24 bg-gradient-to-b from-light to-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">环保资讯</span>
+      <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mt-4 mb-6">
+        最新<span class="bg-gradient-to-r from-primary to-secondary text-gradient">环保动态</span>
+      </h2>
+    </div>
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+      <!-- 新闻1 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover relative group">
+        <a href="环保咨询-全国生态环境保护大会在北京召开.html" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:bg-primary hover:text-white">
+          <i class="fa fa-external-link"></i>
+        </a>
+        <img src="https://picsum.photos/id/251/600/400" alt="全国生态环境保护大会" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <div class="text-sm text-gray-500 mb-3">
+            <i class="fa fa-calendar-o mr-2"></i>2025.05.20
+          </div>
+          <h3 class="font-bold text-xl mb-3 line-clamp-2">全国生态环境保护大会在北京召开</h3>
+          <p class="text-gray-600 mb-6 line-clamp-3">
+            大会部署美丽中国建设重点任务，全面推进绿色低碳发展，筑牢国家生态安全底线。
+          </p>
+          <button data-type="news" data-id="1" class="openModal w-full py-3 rounded-lg border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+            阅读全文 <i class="fa fa-arrow-right link-icon"></i>
+          </button>
+        </div>
+      </div>
+      <!-- 新闻2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover relative group">
+        <a href="环保咨询-我国可再生能源装机突破 10 亿千瓦.html" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:bg-primary hover:text-white">
+          <i class="fa fa-external-link"></i>
+        </a>
+        <img src="https://picsum.photos/id/260/600/400" alt="可再生能源装机突破" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <div class="text-sm text-gray-500 mb-3">
+            <i class="fa fa-calendar-o mr-2"></i>2025.05.10
+          </div>
+          <h3 class="font-bold text-xl mb-3 line-clamp-2">我国可再生能源装机突破10亿千瓦</h3>
+          <p class="text-gray-600 mb-6 line-clamp-3">
+            风电光伏持续高速扩容，清洁能源成为电力增量主力，能源转型成效显著。
+          </p>
+          <button data-type="news" data-id="2" class="openModal w-full py-3 rounded-lg border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+            阅读全文 <i class="fa fa-arrow-right link-icon"></i>
+          </button>
+        </div>
+      </div>
+      <!-- 新闻3 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover relative group">
+        <a href="环保咨询-长江流域生态环境持续改善.html" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md hover:bg-primary hover:text-white">
+          <i class="fa fa-external-link"></i>
+        </a>
+        <img src="https://picsum.photos/id/287/600/400" alt="长江流域生态改善" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <div class="text-sm text-gray-500 mb-3">
+            <i class="fa fa-calendar-o mr-2"></i>2025.04.28
+          </div>
+          <h3 class="font-bold text-xl mb-3 line-clamp-2">长江流域生态环境持续改善</h3>
+          <p class="text-gray-600 mb-6 line-clamp-3">
+            长江大保护落地五年，干流水质全线达标，江豚等珍稀水生生物种群稳步恢复。
+          </p>
+          <button data-type="news" data-id="3" class="openModal w-full py-3 rounded-lg border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+            阅读全文 <i class="fa fa-arrow-right link-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系我们 -->
+<section id="contact" class="py-24 bg-primary/5">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-12">
+      <div class="lg:w-1/2">
+        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-6">联系我们</h2>
+        <p class="text-gray-600 mb-8">
+          项目合作、志愿者报名、咨询建议，欢迎随时与我们联系。
+        </p>
+        <div class="space-y-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <i class="fa fa-map-marker text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-lg">地址</h4>
+              <p class="text-gray-600">河南省焦作市</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <i class="fa fa-phone text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-lg">电话</h4>
+              <p class="text-gray-600">021-8888 9999</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <i class="fa fa-envelope text-primary"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-lg">邮箱</h4>
+              <p class="text-gray-600">contact@lvjing.org</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/2 bg-white p-8 rounded-2xl shadow-lg">
+        <h3 class="text-2xl font-bold mb-6">在线留言</h3>
+        <form>
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <input type="text" placeholder="您的姓名" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-colors">
+            <input type="email" placeholder="电子邮箱" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-colors">
+          </div>
+          <input type="text" placeholder="留言主题" class="border border-gray-300 rounded-lg px-4 py-3 w-full mb-6 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-colors">
+          <textarea rows="4" placeholder="留言内容" class="border border-gray-300 rounded-lg px-4 py-3 w-full mb-6 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-colors"></textarea>
+          <button type="submit" class="w-full rounded-lg py-4 bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
+            提交留言
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="bg-dark text-white pt-16 pb-8">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-4 grid-cols-1 gap-8 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+            <i class="fa fa-leaf text-white text-xl"></i>
+          </div>
+          <span class="font-bold text-xl">绿境</span>
+        </div>
+        <p class="text-gray-400 mb-6">
+          守护自然生态，共建绿色家园，让地球永续发展。
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center">
+            <i class="fa fa-weixin"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center">
+            <i class="fa fa-weibo"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6">快速链接</h4>
+        <ul class="space-y-3">
+          <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+          <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">环保项目</a></li>
+          <li><a href="#news" class="text-gray-400 hover:text-white transition-colors">环保资讯</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6">环保项目</h4>
+        <ul class="space-y-3">
+          <li><a href="环保项目-森林恢复计划.html" class="text-gray-400 hover:text-white transition-colors">森林恢复计划</a></li>
+          <li><a href="环保项目-河流清洁行动.html" class="text-gray-400 hover:text-white transition-colors">河流清洁行动</a></li>
+          <li><a href="环保项目-绿色校园计划.html" class="text-gray-400 hover:text-white transition-colors">绿色校园计划</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6">联系我们</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <i class="fa fa-map-marker text-primary mr-3 mt-1"></i>
+            <span class="text-gray-400">河南省焦作市</span>
+          </li>
+          <li class="flex items-start">
+            <i class="fa fa-phone text-primary mr-3 mt-1"></i>
+            <span class="text-gray-400">021-8888 9999</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8">
+      <p class="text-center text-gray-500 text-sm">
+        © 2025 绿境环保组织. 保留所有权利.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- 全局模态框 -->
+<div id="globalModal" class="fixed inset-0 z-[999] flex items-center justify-center opacity-0 invisible transition-all duration-300">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm modalClose"></div>
+  <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto scroll-hide transform scale-90 transition-all duration-300 relative mx-4">
+    <button class="modalClose absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 text-xl flex items-center justify-center hover:bg-gray-100 transition-colors z-10">
+      <i class="fa fa-times"></i>
+    </button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+// 数据池
+const dataPool = {
+  project: {
+    1: {
+      title: "森林恢复计划",
+      tag: "植树造林",
+      img: "https://picsum.photos/id/28/1200/500",
+      progress: "78%",
+      money: "目标200万元｜已筹156万元",
+      desc: `
+        <img src="https://picsum.photos/id/28/1200/500" class="w-full rounded-t-2xl mb-6">
+        <div class="px-6 pb-8">
+          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">植树造林</span>
+          <h2 class="text-2xl font-bold mt-4 mb-4">森林恢复计划</h2>
+          <p class="text-gray-600 mb-4">
+            项目自2020年启动，已在全国10个省份落地实施，累计栽种原生树木500万株，修复退化山地5万公顷。
+          </p>
+          <h3 class="font-bold text-lg mb-3">项目目标</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-4">
+            <li>2030年前完成1000万株树木种植</li>
+            <li>修复10万公顷退化山地生态系统</li>
+            <li>年固碳量达到2000万吨以上</li>
+            <li>保护500种以上野生动植物栖息地</li>
+          </ul>
+          <p class="text-primary font-medium">每捐赠100元 = 10棵原生树苗落地</p>
+        </div>
+      `
+    },
+    2: {
+      title: "河流清洁行动",
+      tag: "水资源保护",
+      img: "https://picsum.photos/id/1002/1200/500",
+      progress: "65%",
+      money: "目标150万元｜已筹97.5万元",
+      desc: `
+        <img src="https://picsum.photos/id/1002/1200/500" class="w-full rounded-t-2xl mb-6">
+        <div class="px-6 pb-8">
+          <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">水资源保护</span>
+          <h2 class="text-2xl font-bold mt-4 mb-4">河流清洁行动</h2>
+          <p class="text-gray-600 mb-4">
+            组织民间志愿者开展常态化河道清理、水质采样监测，推动沿岸企业污水治理，守护母亲河生态健康。
+          </p>
+          <h3 class="font-bold text-lg mb-3">项目成果</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-4">
+            <li>累计开展500+场河道净滩活动</li>
+            <li>打捞河道垃圾超过1000吨</li>
+            <li>在20条重点流域设立长效监测站</li>
+            <li>推动30+家企业完成污水治理改造</li>
+          </ul>
+          <p class="text-accent font-medium">每捐赠50元 = 清理10公斤河道垃圾</p>
+        </div>
+      `
+    },
+    3: {
+      title: "绿色校园计划",
+      tag: "环保教育",
+      img: "https://picsum.photos/id/239/1200/500",
+      progress: "52%",
+      money: "目标100万元｜已筹52万元",
+      desc: `
+        <img src="https://picsum.photos/id/239/1200/500" class="w-full rounded-t-2xl mb-6">
+        <div class="px-6 pb-8">
+          <span class="bg-warm/10 text-warm px-3 py-1 rounded-full text-sm">环保教育</span>
+          <h2 class="text-2xl font-bold mt-4 mb-4">绿色校园计划</h2>
+          <p class="text-gray-600 mb-4">
+            面向中小学定制系统化环保课程，打造校园垃圾分类示范点、绿植实践课堂，培养下一代环保意识。
+          </p>
+          <h3 class="font-bold text-lg mb-3">项目覆盖</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-4">
+            <li>全国100+所合作中小学</li>
+            <li>受益学生超过10万人次</li>
+            <li>开发6套标准化环保校本教材</li>
+            <li>培训500+名环保骨干教师</li>
+          </ul>
+          <p class="text-warm font-medium">每捐赠200元 = 一名学生全年环保课程</p>
+        </div>
+      `
+    }
+  },
+  news: {
+    1: {
+      title: "全国生态环境保护大会在北京召开",
+      date: "2025.05.20",
+      img: "https://picsum.photos/id/251/1200/500",
+      desc: `
+        <img src="https://picsum.photos/id/251/1200/500" class="w-full rounded-t-2xl mb-6">
+        <div class="px-6 pb-8">
+          <div class="text-gray-500 mb-3">发布时间：2025.05.20</div>
+          <h2 class="text-2xl font-bold mb-4">全国生态环境保护大会在北京召开</h2>
+          <p class="text-gray-600 mb-4">
+            2025年5月18日至19日，全国生态环境保护大会在北京召开。会议强调，要持续深入打好污染防治攻坚战，加快推动发展方式绿色低碳转型。
+          </p>
+          <h3 class="font-bold text-lg mb-3">重点部署工作</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-4">
+            <li>持续攻坚大气、水、土壤污染治理</li>
+            <li>积极稳妥推进碳达峰碳中和</li>
+            <li>筑牢国家生态安全底线</li>
+            <li>健全生态环境保护法治体系</li>
+          </ul>
+        </div>
+      `
+    },
+    2: {
+      title: "我国可再生能源装机突破10亿千瓦",
+      date: "2025.05.10",
+      img: "https://picsum.photos/id/260/1200/500",
+      desc: `
+        <img src="https://picsum.photos/id/260/1200/500" class="w-full rounded-t-2xl mb-6">
+        <div class="px-6 pb-8">
+          <div class="text-gray-500 mb-3">发布时间：2025.05.10</div>
+          <h2 class="text-2xl font-bold mb-4">我国可再生能源装机突破10亿千瓦</h2>
+          <p class="text-gray-600 mb-4">
+            国家能源局最新数据显示，截至2025年4月底，我国可再生能源装机容量突破10亿千瓦，占全国发电总装机容量的比重超过45%。
+          </p>
+          <h3 class="font-bold text-lg mb-3">行业发展现状</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-4">
+            <li>光伏装机4.5亿千瓦，风电装机3.8亿千瓦</li>
+            <li>可再生能源产业链完整，技术水平全球领先</li>
+            <li>弃风弃光率连续三年保持在5%以下</li>
+          </ul>
+        </div>
+      `
+    },
+    3: {
+      title: "长江流域生态环境持续改善",
+      date: "2025.04.28",
+      img: "https://picsum.photos/id/287/1200/500",
+      desc: `
+        <img src="https://picsum.photos/id/287/1200/500" class="w-full rounded-t-2xl mb-6">
+        <div class="px-6 pb-8">
+          <div class="text-gray-500 mb-3">发布时间：2025.04.28</div>
+          <h2 class="text-2xl font-bold mb-4">长江流域生态环境持续改善</h2>
+          <p class="text-gray-600 mb-4">
+            生态环境部发布的《2024年中国生态环境状况公报》显示，长江流域生态环境持续改善，水质优良断面比例达到98.1%。
+          </p>
+          <h3 class="font-bold text-lg mb-3">治理成效</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-4">
+            <li>长江干流水质连续3年全线达到Ⅱ类标准</li>
+            <li>长江江豚种群数量稳步回升至1249头</li>
+            <li>流域森林覆盖率达到47.8%</li>
+          </ul>
+        </div>
+      `
+    }
+  }
+}
+
+// 模态框控制
+const modalWrap = document.getElementById('globalModal')
+const modalBody = document.getElementById('modalContent')
+const openBtns = document.querySelectorAll('.openModal')
+const closeBtns = document.querySelectorAll('.modalClose')
+
+openBtns.forEach(btn => {
+  btn.onclick = () => {
+    const type = btn.dataset.type
+    const id = btn.dataset.id
+    const info = dataPool[type][id]
+    modalBody.innerHTML = info.desc
+    modalWrap.classList.remove('opacity-0', 'invisible')
+    modalWrap.querySelector('div:nth-child(2)').classList.remove('scale-90')
+    modalWrap.querySelector('div:nth-child(2)').classList.add('scale-100')
+    document.body.style.overflow = 'hidden'
+  }
+})
+
+closeBtns.forEach(el => {
+  el.onclick = () => {
+    modalWrap.classList.add('opacity-0', 'invisible')
+    modalWrap.querySelector('div:nth-child(2)').classList.remove('scale-100')
+    modalWrap.querySelector('div:nth-child(2)').classList.add('scale-90')
+    document.body.style.overflow = ''
+  }
+})
+
+// 移动端菜单
+const menuBtn = document.getElementById('menuBtn')
+const mobileMenu = document.getElementById('mobileMenu')
+menuBtn.onclick = () => {
+  if(mobileMenu.classList.contains('opacity-0')){
+    mobileMenu.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none')
+    menuBtn.innerHTML = '<i class="fa fa-times"></i>'
+  }else{
+    mobileMenu.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none')
+    menuBtn.innerHTML = '<i class="fa fa-bars"></i>'
+  }
+}
+
+// 导航栏滚动效果
+const navbar = document.getElementById('navbar')
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50){
+    navbar.classList.add('glass', 'shadow-lg', 'py-2')
+    navbar.classList.remove('py-4')
+  }else{
+    navbar.classList.remove('glass', 'shadow-lg', 'py-2')
+    navbar.classList.add('py-4')
+  }
+})
+
+// 平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault()
+    const target = document.querySelector(this.getAttribute('href'))
+    if(target){
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: 'smooth'
+      })
+      // 关闭移动端菜单
+      if(!mobileMenu.classList.contains('opacity-0')){
+        mobileMenu.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none')
+        menuBtn.innerHTML = '<i class="fa fa-bars"></i>'
+      }
+    }
+  })
+})
+</script>
+</body>
+</html>

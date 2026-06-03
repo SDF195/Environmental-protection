@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>森林恢复计划 | 绿境环保</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <script>
+    tailwind.config = {
+      theme:{
+        extend:{
+          colors:{
+            primary:'#22C55E',
+            secondary:'#10B981',
+            accent:'#3B82F6',
+            warm:'#F59E0B',
+            dark:'#0F172A',
+            light:'#F0FDF4'
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .glass{background:rgba(255,255,255,0.7);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.3)}
+      .text-gradient{background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    }
+  </style>
+</head>
+<body class="bg-light font-sans text-gray-800 overflow-x-hidden">
+<!-- 导航栏 -->
+<header id="navbar" class="fixed top-0 w-full z-50 py-4 transition-all duration-500 glass shadow-lg">
+  <div class="container mx-auto px-6">
+    <nav class="flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+          <i class="fa fa-leaf text-white text-xl"></i>
+        </div>
+        <span class="font-bold text-xl text-dark">绿境</span>
+      </a>
+      <div class="hidden md:flex gap-8 items-center">
+        <a href="主页.html#home" class="text-dark hover:text-primary transition-colors">首页</a>
+        <a href="主页.html#about" class="text-dark hover:text-primary transition-colors">关于我们</a>
+        <a href="主页.html#projects" class="text-dark hover:text-primary transition-colors">环保项目</a>
+        <a href="主页.html#news" class="text-dark hover:text-primary transition-colors">环保资讯</a>
+        <a href="主页.html#contact" class="rounded-full px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg transition-all">
+          加入我们
+        </a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-2xl text-dark">
+        <i class="fa fa-bars"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- 详情页内容 -->
+<section class="pt-32 pb-24">
+  <div class="container mx-auto px-6">
+    <!-- 面包屑导航 -->
+    <div class="mb-8">
+      <nav class="flex items-center text-sm text-gray-500">
+        <a href="主页.html" class="hover:text-primary transition-colors">首页</a>
+        <i class="fa fa-chevron-right mx-2 text-xs"></i>
+        <a href="主页.html#projects" class="hover:text-primary transition-colors">环保项目</a>
+        <i class="fa fa-chevron-right mx-2 text-xs"></i>
+        <span class="text-gray-800 font-medium">森林恢复计划</span>
+      </nav>
+    </div>
+
+    <!-- 项目详情 -->
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+      <img src="https://picsum.photos/id/28/1200/500" alt="森林恢复计划" class="w-full h-80 object-cover">
+      <div class="p-8">
+        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">植树造林</span>
+        <h1 class="text-3xl font-bold mt-4 mb-6">森林恢复计划</h1>
+        
+        <div class="flex flex-wrap gap-4 mb-8">
+          <div class="bg-light px-4 py-2 rounded-lg">
+            <span class="text-gray-500 text-sm">项目进度</span>
+            <p class="font-bold text-primary text-lg">78%</p>
+          </div>
+          <div class="bg-light px-4 py-2 rounded-lg">
+            <span class="text-gray-500 text-sm">已筹资金</span>
+            <p class="font-bold text-primary text-lg">156万元</p>
+          </div>
+          <div class="bg-light px-4 py-2 rounded-lg">
+            <span class="text-gray-500 text-sm">目标资金</span>
+            <p class="font-bold text-gray-800 text-lg">200万元</p>
+          </div>
+          <div class="bg-light px-4 py-2 rounded-lg">
+            <span class="text-gray-500 text-sm">启动时间</span>
+            <p class="font-bold text-gray-800 text-lg">2020年3月</p>
+          </div>
+        </div>
+
+        <div class="prose max-w-none">
+          <p class="text-gray-600 mb-4">
+            森林恢复计划是绿境环保组织发起的一项大型生态修复项目，旨在通过种植原生树种，恢复我国退化的山地和荒地生态系统，重建生物栖息地，增加碳汇，应对气候变化。
+          </p>
+          <h2 class="text-2xl font-bold mt-8 mb-4">项目背景</h2>
+          <p class="text-gray-600 mb-4">
+            我国是世界上森林资源相对匮乏的国家之一，人均森林面积仅为世界平均水平的1/4。由于长期的过度砍伐和不合理开发，许多地区的山地生态系统遭到严重破坏，导致水土流失、生物多样性丧失、自然灾害频发等问题。
+          </p>
+          <h2 class="text-2xl font-bold mt-8 mb-4">项目目标</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-4">
+            <li>到2030年，在全国范围内种植1000万株原生树木</li>
+            <li>修复10万公顷退化的山地和荒地生态系统</li>
+            <li>年固碳量达到2000万吨以上</li>
+            <li>保护500种以上野生动植物的栖息地</li>
+            <li>为当地社区创造2000个就业机会</li>
+          </ul>
+          <h2 class="text-2xl font-bold mt-8 mb-4">项目进展</h2>
+          <p class="text-gray-600 mb-4">
+            自2020年3月启动以来，项目已在云南、贵州、四川、甘肃等10个省份落地实施，累计种植原生树木500万株，修复退化山地5万公顷。我们选择当地原生树种，采用科学的种植方法，确保树木的成活率达到90%以上。
+          </p>
+          <p class="text-gray-600 mb-4">
+            我们还与当地政府和社区密切合作，提供培训和技术支持，帮助他们发展可持续的林业经济，实现生态保护与经济发展的双赢。
+          </p>
+          <h2 class="text-2xl font-bold mt-8 mb-4">如何参与</h2>
+          <p class="text-gray-600 mb-4">
+            您可以通过以下方式参与森林恢复计划：
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-4">
+            <li>捐赠资金支持项目开展，每捐赠100元即可种植10棵树</li>
+            <li>报名成为志愿者，亲自参与植树活动</li>
+            <li>向身边的朋友宣传项目，让更多人参与进来</li>
+          </ul>
+        </div>
+
+        <div class="mt-12 p-6 bg-primary/5 rounded-xl">
+          <h3 class="text-xl font-bold mb-4">支持这个项目</h3>
+          <p class="text-gray-600 mb-6">
+            您的每一份捐赠，都将为地球增添一片绿色，为子孙后代留下一个更美好的家园。
+          </p>
+          <button class="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-lg transition-all duration-300">
+            立即捐赠
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 相关项目推荐 -->
+    <div class="mt-16">
+      <h2 class="text-2xl font-bold mb-8">相关项目</h2>
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-8">
+        <a href="环保项目-河流清洁行动.html" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+          <img src="https://picsum.photos/id/1002/600/300" alt="河流清洁行动" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">河流清洁行动</h3>
+            <p class="text-gray-600">志愿者河道清淤、垃圾打捞与水质监测，守护母亲河。</p>
+          </div>
+        </a>
+        <a href="环保项目-绿色校园计划.html" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+          <img src="https://picsum.photos/id/239/600/300" alt="绿色校园计划" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">绿色校园计划</h3>
+            <p class="text-gray-600">中小学环保课程落地，打造绿色校园，培养下一代环保意识。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="bg-dark text-white pt-16 pb-8">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-4 grid-cols-1 gap-8 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+            <i class="fa fa-leaf text-white text-xl"></i>
+          </div>
+          <span class="font-bold text-xl">绿境</span>
+        </div>
+        <p class="text-gray-400 mb-6">
+          守护自然生态，共建绿色家园，让地球永续发展。
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center">
+            <i class="fa fa-weixin"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center">
+            <i class="fa fa-weibo"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6">快速链接</h4>
+        <ul class="space-y-3">
+          <li><a href="主页.html#home" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+          <li><a href="主页.html#about" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+          <li><a href="主页.html#projects" class="text-gray-400 hover:text-white transition-colors">环保项目</a></li>
+          <li><a href="主页.html#news" class="text-gray-400 hover:text-white transition-colors">环保资讯</a></li>
+          <li><a href="主页.html#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6">环保项目</h4>
+        <ul class="space-y-3">
+              <li><a href="环保项目-森林恢复计划.html" class="text-gray-400 hover:text-white transition-colors">森林恢复计划</a></li>
+          <li><a href="环保项目-河流清洁行动.html" class="text-gray-400 hover:text-white transition-colors">河流清洁行动</a></li>
+          <li><a href="环保项目-绿色校园计划.html" class="text-gray-400 hover:text-white transition-colors">绿色校园计划</a></li>
+
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6">联系我们</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <i class="fa fa-map-marker text-primary mr-3 mt-1"></i>
+            <span class="text-gray-400">河南省焦作市</span>
+          </li>
+          <li class="flex items-start">
+            <i class="fa fa-phone text-primary mr-3 mt-1"></i>
+            <span class="text-gray-400">021-8888 9999</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8">
+      <p class="text-center text-gray-500 text-sm">
+        © 2025 绿境环保组织. 保留所有权利.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 移动端菜单
+const menuBtn = document.getElementById('menuBtn')
+const mobileMenu = document.getElementById('mobileMenu')
+menuBtn.onclick = () => {
+  if(mobileMenu.classList.contains('opacity-0')){
+    mobileMenu.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none')
+    menuBtn.innerHTML = '<i class="fa fa-times"></i>'
+  }else{
+    mobileMenu.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none')
+    menuBtn.innerHTML = '<i class="fa fa-bars"></i>'
+  }
+}
+</script>
+</body>
+</html>

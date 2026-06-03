@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>长江流域生态环境持续改善 | 绿境环保</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <script>
+    tailwind.config = {
+      theme:{
+        extend:{
+          colors:{
+            primary:'#22C55E',
+            secondary:'#10B981',
+            accent:'#3B82F6',
+            warm:'#F59E0B',
+            dark:'#0F172A',
+            light:'#F0FDF4'
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .glass{background:rgba(255,255,255,0.7);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.3)}
+      .text-gradient{background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    }
+  </style>
+</head>
+<body class="bg-light font-sans text-gray-800 overflow-x-hidden">
+<!-- 导航栏 -->
+<header id="navbar" class="fixed top-0 w-full z-50 py-4 transition-all duration-500 glass shadow-lg">
+  <div class="container mx-auto px-6">
+    <nav class="flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+          <i class="fa fa-leaf text-white text-xl"></i>
+        </div>
+        <span class="font-bold text-xl text-dark">绿境</span>
+      </a>
+      <div class="hidden md:flex gap-8 items-center">
+        <a href="主页.html#home" class="text-dark hover:text-primary transition-colors">首页</a>
+        <a href="主页.html#about" class="text-dark hover:text-primary transition-colors">关于我们</a>
+        <a href="主页.html#projects" class="text-dark hover:text-primary transition-colors">环保项目</a>
+        <a href="主页.html#news" class="text-dark hover:text-primary transition-colors">环保资讯</a>
+        <a href="主页.html#contact" class="rounded-full px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg transition-all">
+          加入我们
+        </a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-2xl text-dark">
+        <i class="fa fa-bars"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- 新闻详情 -->
+<section class="pt-32 pb-24">
+  <div class="container mx-auto px-6">
+    <!-- 面包屑导航 -->
+    <div class="mb-8">
+      <nav class="flex items-center text-sm text-gray-500">
+        <a href="主页.html" class="hover:text-primary transition-colors">首页</a>
+        <i class="fa fa-chevron-right mx-2 text-xs"></i>
+        <a href="主页.html#news" class="hover:text-primary transition-colors">环保资讯</a>
+        <i class="fa fa-chevron-right mx-2 text-xs"></i>
+        <span class="text-gray-800 font-medium">长江流域生态环境持续改善</span>
+      </nav>
+    </div>
+
+    <!-- 新闻内容 -->
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+      <img src="https://picsum.photos/id/287/1200/500" alt="长江流域生态环境持续改善" class="w-full h-80 object-cover">
+      <div class="p-8">
+        <div class="flex items-center text-gray-500 mb-4">
+          <i class="fa fa-calendar-o mr-2"></i>
+          <span>2025年4月28日</span>
+          <span class="mx-4">|</span>
+          <i class="fa fa-user-o mr-2"></i>
+          <span>绿境编辑部</span>
+        </div>
+        <h1 class="text-3xl font-bold mb-6">长江流域生态环境持续改善</h1>
+        
+        <div class="prose max-w-none">
+          <p class="text-gray-600 mb-4">
+            生态环境部近日发布的《2024年中国生态环境状况公报》显示，长江流域生态环境持续改善，水质优良断面比例达到98.1%，同比上升0.5个百分点，创历史最好水平。
+          </p>
+          <p class="text-gray-600 mb-4">
+            长江是我国第一大河，是中华民族的母亲河。2020年以来，我国实施了长江大保护战略，全面推进长江流域生态环境保护和修复工作，经过五年的不懈努力，长江流域生态环境发生了显著变化。
+          </p>
+          <h2 class="text-2xl font-bold mt-8 mb-4">主要治理成效</h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-600 mb-4">
+            <li>长江干流水质连续3年全线达到Ⅱ类标准</li>
+            <li>长江江豚种群数量稳步回升至1249头，较2017年增长52%</li>
+            <li>流域森林覆盖率达到47.8%，较2020年提高2.3个百分点</li>
+            <li>水土流失面积同比减少20%，土壤侵蚀强度明显下降</li>
+            <li>主要污染物排放量较2020年下降30%以上</li>
+          </ul>
+          <h2 class="text-2xl font-bold mt-8 mb-4">重点治理措施</h2>
+          <p class="text-gray-600 mb-4">
+            长江大保护实施以来，我国先后出台了《长江保护法》等一系列法律法规，建立了长江流域生态环境保护责任制，实施了长江十年禁渔计划，开展了入河排污口排查整治、黑臭水体治理、矿山生态修复等专项行动。
+          </p>
+          <p class="text-gray-600 mb-4">
+            同时，国家加大了对长江流域生态环境保护的资金投入，累计投入超过1万亿元，用于支持污水处理厂建设、垃圾处理设施升级、生态修复工程等项目。
+          </p>
+          <p class="text-gray-600 mb-4">
+            绿境环保组织多年来一直参与长江生态环境保护工作，组织了多次长江净滩活动，开展了长江江豚保护宣传，见证了长江生态环境的逐步改善。我们将继续投身长江大保护事业，为守护母亲河贡献力量。
+          </p>
+        </div>
+
+        <!-- 分享按钮 -->
+        <div class="mt-12 pt-6 border-t border-gray-200">
+          <h3 class="text-lg font-bold mb-4">分享这篇文章</h3>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-green-600 transition-colors">
+              <i class="fa fa-weixin"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 transition-colors">
+              <i class="fa fa-weibo"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <i class="fa fa-link"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 相关新闻推荐 -->
+    <div class="mt-16">
+      <h2 class="text-2xl font-bold mb-8">相关新闻</h2>
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-8">
+        <a href="环保咨询-全国生态环境保护大会在北京召开.html" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+          <img src="https://picsum.photos/id/251/600/300" alt="全国生态环境保护大会" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">全国生态环境保护大会在北京召开</h3>
+            <p class="text-gray-600">大会部署美丽中国建设重点任务，全面推进绿色低碳发展。</p>
+          </div>
+        </a>
+        <a href="环保咨询-我国可再生能源装机突破 10 亿千瓦.html" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+          <img src="https://picsum.photos/id/260/600/300" alt="可再生能源装机突破" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">我国可再生能源装机突破10亿千瓦</h3>
+            <p class="text-gray-600">风电光伏持续高速扩容，清洁能源成为电力增量主力。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="bg-dark text-white pt-16 pb-8">
+  <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-4 grid-cols-1 gap-8 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+            <i class="fa fa-leaf text-white text-xl"></i>
+          </div>
+          <span class="font-bold text-xl">绿境</span>
+        </div>
+        <p class="text-gray-400 mb-6">
+          守护自然生态，共建绿色家园，让地球永续发展。
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center">
+            <i class="fa fa-weixin"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center">
+            <i class="fa fa-weibo"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6">快速链接</h4>
+        <ul class="space-y-3">
+          <li><a href="主页.html#home" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+          <li><a href="主页.html#about" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+          <li><a href="主页.html#projects" class="text-gray-400 hover:text-white transition-colors">环保项目</a></li>
+          <li><a href="主页.html#news" class="text-gray-400 hover:text-white transition-colors">环保资讯</a></li>
+          <li><a href="主页.html#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6">环保项目</h4>
+        <ul class="space-y-3">
+         <li><a href="环保项目-森林恢复计划.html" class="text-gray-400 hover:text-white transition-colors">森林恢复计划</a></li>
+          <li><a href="环保项目-河流清洁行动.html" class="text-gray-400 hover:text-white transition-colors">河流清洁行动</a></li>
+          <li><a href="环保项目-绿色校园计划.html" class="text-gray-400 hover:text-white transition-colors">绿色校园计划</a></li>
+
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6">联系我们</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <i class="fa fa-map-marker text-primary mr-3 mt-1"></i>
+            <span class="text-gray-400">河南省焦作市</span>
+          </li>
+          <li class="flex items-start">
+            <i class="fa fa-phone text-primary mr-3 mt-1"></i>
+            <span class="text-gray-400">021-8888 9999</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8">
+      <p class="text-center text-gray-500 text-sm">
+        © 2025 绿境环保组织. 保留所有权利.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 移动端菜单
+const menuBtn = document.getElementById('menuBtn')
+const mobileMenu = document.getElementById('mobileMenu')
+menuBtn.onclick = () => {
+  if(mobileMenu.classList.contains('opacity-0')){
+    mobileMenu.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none')
+    menuBtn.innerHTML = '<i class="fa fa-times"></i>'
+  }else{
+    mobileMenu.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none')
+    menuBtn.innerHTML = '<i class="fa fa-bars"></i>'
+  }
+}
+</script>
+</body>
+</html>
